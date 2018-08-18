@@ -3,7 +3,6 @@
 ## SourceTree
 [SourceTree](https://www.sourcetreeapp.com/) is my git GUI of choice.  It is free, and it makes it very easy to do most operations you'd need to do on a git repository.  It also provides the ability to access less-common git activities in a reasonably user-friendly fashion.  I find it's history graph view particularly helpful to navigate between branches and to see the history of a repository.
 
-
 ## Git Command Line
 Git also has a command line interface, that is unfortunately somewhat difficult to learn.  However, it remains the best way to perform some advanced tasks, and allows you to repair issues you may run across. I reccomend installing it, even if you plan to always use Sourcetree.  The [git-scm](https://git-scm.com/) website is a very good resource for using the Git command line utility, especially if you understand the nomenclature used in git.
 
@@ -33,20 +32,29 @@ You can put a special file in your repository called `.gitignore` that allows yo
 # Branching
 
 ## It's all Just Commits
-As mentioned above, a branch is literally just a label on a particular commit.  
+As mentioned previously, a branch is just a label that points at a particular commit.  A branch allows you to work on changes in isolation, and only add them to the mainline when the changes are complete.  Git allows a branch to replace your working tree on disk, and since you have an entire copy of the repository on the local machine, it is very quick to change between branches.
 
 ## Moving Between Branches
-When you want to work on a 
+To select a branch in SourceTree, simply double click the label for the branch and your working tree will update.  To check out a branch via the cli, the command is `git checkout [branch-name]`
+
+If changes in the branch conflict with uncommitted changes in the working tree, you'll need to either commit or stash the changes.  You can stash changes via the "Repository" menu in SourceTree, or with the command `git stash push`.  you can later apply your changes from the stashes menu on the left hand side, or in the cli using `git stash pop`.
 
 ## Merging Branches
 
+Git's merging algorithms are very flexible, it is possible 
+
+Additionally, there are a few different philosophies 
+
 ## Tags
+tags are a sort of special case of branches.  Like branches, they are a label on a specific commit in the repository.  however, unlike branches, they stay attached to that specific commit, and allow users of the repository to refer to that commit later by a nice name.  This functionality is often used to mark a release version.  This commit can then be referred to if, say, a bug is discovered.
 
 # Remotes
 
 ## Push/Pull
 
 ## Don't Change History
+
+## A Digression on code deployment
 
 # Fixing Stuff when it breaks
 
@@ -55,6 +63,3 @@ When you want to work on a
 ## Undoing commits in the middle
 
 ## Amending commits
-
-## git reflog
- 
